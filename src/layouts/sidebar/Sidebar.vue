@@ -73,24 +73,6 @@ name: "sidebar",
         icon: "mdi-alert",
         to: "/pages/alerts"
       },
-
-      {
-        title: "Abrir Caja",
-        icon: "mdi-book-open-variant",
-        to: "/pages/icons"
-      },
-
-      {
-        title: "Administrador",
-        icon: "mdi-account",
-        to: "/pages/tables-simple"
-      },
-
-      {
-        title: "Corte",
-        icon: "mdi-cash-multiple",
-        to: "/pages/Corte"
-      }
     ]
   })
 }

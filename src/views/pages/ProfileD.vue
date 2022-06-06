@@ -23,22 +23,21 @@
               filled
               background-color="transparent"
             ></v-text-field>
-            <!--Nacionalidad-->
-            <v-select
-            v-model="nac"
-            :items="states"
-            menu-props="auto"
-            label="Country"
-            hide-details
-            prepend-icon="mdi-map"
-            single-line
-            ></v-select>
             <!-- Sexo --> 
             <v-select
             v-model="sex"
             :items="sexo"
             menu-props="auto"
             label="Sex"
+            hide-details
+            single-line
+            ></v-select>
+            <!--Nacionalidad-->
+            <v-select
+            v-model="nacio"
+            :items="states"
+            menu-props="auto"
+            label="Country"
             hide-details
             prepend-icon="mdi-map"
             single-line
@@ -96,82 +95,31 @@
           <v-card-text>
               <!-- Peso-->
               <v-text-field
-              v-model="weight"
-              label="Weight e.g 68.2 kg"
+              v-model="pro"
+              label="Professional License"
               filled
               background-color="transparent"
               cols="3"
             ></v-text-field>
-            <!-- Estatura -->
-            <v-text-field
-              v-model="height"
-              label="Height e.g 175 cm"
-              filled
-              background-color="transparent"
-            ></v-text-field>
+            
             <!--Sangre-->
             <v-select
-            v-model="san"
-            :items="blood"
+            v-model="espe"
+            :items="esp"
             menu-props="auto"
-            label="Blood Type"
+            label="Specialty"
             hide-details
-            
             single-line
             ></v-select>
 
-            <!--Enfermedades-->
-             <v-combobox
-            v-model="enfer"
-            :items="enf"
-            label="Diseases"
-            multiple
-            chips
-          >
-            <template v-slot:selection="data">
-              <v-chip
-                :key="JSON.stringify(data.item)"
-                v-bind="data.attrs"
-                :input-value="data.selected"
-                :disabled="data.disabled"
-                @click:close="data.parent.selectItem(data.item)"
-              >
-                <v-avatar
-                  class="accent white--text"
-                  left
-                  v-text="data.item.slice(0, 1).toUpperCase()"
-                ></v-avatar>
-                {{ data.item }}
-              </v-chip>
-            </template>
-          </v-combobox>
-
-          <!--Alergias-->
-             <v-combobox
-            v-model="alergias"
-            :items="allergies"
-            label="Allergies"
-            multiple
-            chips
-          >
-            <template v-slot:selection="data">
-              <v-chip
-                :key="JSON.stringify(data.item)"
-                v-bind="data.attrs"
-                :input-value="data.selected"
-                :disabled="data.disabled"
-                @click:close="data.parent.selectItem(data.item)"
-              >
-                <v-avatar
-                  class="accent white--text"
-                  left
-                  v-text="data.item.slice(0, 1).toUpperCase()"
-                ></v-avatar>
-                {{ data.item }}
-              </v-chip>
-            </template>
-          </v-combobox>
-            
+            <v-select
+            v-model="coun"
+            :items="states"
+            menu-props="auto"
+            label="Country where it operates"
+            hide-details
+            single-line
+            ></v-select>
             <div class="mt-4">
                </div>
           </v-card-text>
@@ -190,29 +138,20 @@ export default {
   data: () => ({
     name: "",
     lastName:"",
-    nac:"",
+    nacio:"",
     sex:"",
+    date:"",
     emailtext: "",
-    weight: "",
-    height: "",
-    san: "",
-    enfer: "",
-    alergias: "",
+    pro: "",
+    espe: "",
+    coun: "",
     show1: false,
-    blood: [
-      'A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'
-    ],
-
-    allergies: [
-      'Balsam of Peru','Buckwheat','Celery','Egg','Fish','Fruit','Garlic','Oats',
-      'Maize','Milk','Mustard','Peanut','Poultry Meat','Red Meat','Rice','Sesame',
-      'Shellfish','Soy','Tetracycline','Dilantin','Penicillin','Non-steroidal anti-inflammatories',
-      'Local anesthetics','Pollen','Cat','Dog','Insect sting','Mold','Semen','Latex'
-    ],
-
-    enf: [
-'Diabetes','Functional gastrointestinal disorder','Arthritis','Asthma','Cancer','Chronic obstructive pulmonary disease',
-'Lyme disease','Autoimmune diseases','Hepatitis C' ,'Acquired immunodeficiency syndrome'
+    esp: [
+      'Allergy and immunology','Anesthesiology','Dermatology','Diagnostic radiology',
+      'Emergency medicine','Family medicine','Internal medicine','Medical genetics',
+      'Neurology','Nuclear medicine','Obstetrics and gynecology','Ophthalmology','Pathology',
+      'Pediatrics','Physical medicine and rehabilitation',
+      'Preventive medicine','Psychiatry','Radiation oncology','Surgery','Urology'
     ],
     sexo:[
       'Female','Male'

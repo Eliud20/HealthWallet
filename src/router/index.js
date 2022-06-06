@@ -20,7 +20,7 @@ export default new Router({
         {
           name: 'Alerts',
           path: 'pages/alerts',
-          component: () => import('@/views/pages/Profile')
+          component: () => import('@/views/pages/ProfileD')
         },
         {
           name: 'Profile',
